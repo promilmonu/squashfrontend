@@ -1,0 +1,183 @@
+@import "../../../mediaquery";
+
+.container {
+  width: 1280px;
+
+  @include responsive(phone) {
+    width: 100%;
+  }
+
+  .navbar {
+    box-sizing: border-box;
+    width: 1280px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 3rem;
+    background: transparent;
+    z-index: 3;
+
+    @include responsive(phone) {
+      width: 100%;
+      left: 0;
+      padding: 1rem 1rem;
+
+    }
+
+    .nav-left {
+      flex: 1;
+
+      .menu-side {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+        width: 91px;
+
+        i {
+          font-size: 2rem;
+          color: white;
+        }
+
+        .addIcon {
+          color: black;
+        }
+
+        p {
+          font-size: 1.3rem;
+          color: white;
+        }
+
+        .pColor {
+          color: black;
+        }
+      }
+
+
+    }
+
+
+    .logo {
+      visibility: hidden;
+      position: absolute;
+      top: 2rem;
+
+      img {
+        width: 67px;
+
+        @include responsive(phone) {
+
+          width: 67%;
+        }
+      }
+    }
+
+    .logoShow {
+      visibility: visible;
+    }
+
+    .nav-right {
+      font-size: 1.2rem;
+      flex: 1;
+      text-align: right;
+      color: white;
+      .right-head-name{
+        color: white;
+      }
+      .navRightColor{
+        color:black
+      }
+      @include responsive(phone) {
+        font-size: .9rem;
+      }
+    }
+
+    .navRight {
+      color: black;
+    }
+
+    .addIcon {
+      color: black;
+    }
+
+
+  }
+
+  .navBackground {
+    background: white;
+    border-bottom: .1rem solid black;
+    transition: all 0.2s linear;
+    opacity: 1;
+  }
+
+  .navListHide {
+    display: none;
+  }
+
+
+
+
+  .nav-item-box {
+    padding-top: 65px;
+    background: white;
+    width: 1280px;
+    position: fixed;
+    top: 4rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    transition: all 0.2s linear;
+    animation: nav-item-box 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    @include responsive(phone) {
+      display: inline-block;
+      column-count: 2;
+      width: 100%;
+      left: 0;
+      text-align: center;
+      column-gap: 40px;
+
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      list-style: none;
+
+      @include responsive(phone) {
+        column-count: 2;
+      }
+
+      li {
+        font-size: 1.5rem;
+        font-weight: 100;
+
+        @include responsive(phone) {
+
+          font-size: .7;
+        }
+
+      }
+    }
+  }
+
+  @keyframes nav-item-box {
+    0% {
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+
+
+
+}

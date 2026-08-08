@@ -1,0 +1,40 @@
+<div class="container">
+  <nav class="navbar" >
+    <div class="nav-left" *ngIf="navMenu===true else elseblock ">
+      <div class="menu-side" (click)="navAction()">
+        <i class="fa-solid fa-bars close-icon" [ngStyle]="navMenu==true && condition==true ?{'color': 'black'} : {'color': 'white'}"  ></i>
+        <p class="menu-name"  [ngStyle]="navMenu==true && condition==true ?{'color': 'black'} : {'color': 'white'}"  >Menu</p>
+      </div>
+
+    </div>
+    <ng-template #elseblock>
+      <div class="nav-left">
+        <div class="menu-side" (click)="navAction()">
+          <i class="fa fa-times close-icon"[ngStyle]="navMenu==false?{'color': 'black'} : {'color': ''}" ></i>
+          <p class="menu-name" [ngStyle]="navMenu==false?{'color': 'black'} : {'color': ''}">Close</p>
+        </div>
+
+      </div>
+    </ng-template>
+    <div class="logo">
+      <img src="../../../assets/logo.png" alt="">
+    </div>
+    <div class="nav-right">
+      <p class="right-head-name" >Support Harvard Squash</p>
+    </div>
+  </nav>
+  <div class="navListHide" (scroll)="onWindowScroll();">
+    <ul>
+      <li>News</li>
+      <li>About</li>
+      <li>Men’s </li>
+      <li>TeamWomen’s / TeamEvents</li>
+      <li>Gallery</li>
+      <li>Awards</li>
+      <li>Donate</li>
+      <li>Shop</li>
+      <li>Contact Us</li>
+      </ul>
+
+  </div>
+</div>
